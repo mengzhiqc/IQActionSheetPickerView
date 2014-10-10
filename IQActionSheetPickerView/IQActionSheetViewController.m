@@ -57,8 +57,8 @@
     }
 
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState|7<<16 animations:^{
-        self.view.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-        
+        self.view.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.3];
+        pickerView.alpha = 1;
         pickerViewFrame.origin.y = self.view.bounds.size.height-pickerViewFrame.size.height;
         pickerView.frame = pickerViewFrame;
 

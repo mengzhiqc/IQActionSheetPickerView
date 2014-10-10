@@ -53,7 +53,9 @@
         //UIToolbar
         {
             _actionToolbar = [[UIToolbar alloc] init];
-            _actionToolbar.barStyle = UIBarStyleBlackTranslucent;
+            [_actionToolbar setBackgroundColor: [UIColor whiteColor]];
+
+            _actionToolbar.barStyle = UIBarStyleDefault;
             [_actionToolbar sizeToFit];
             
             CGRect toolbarFrame = _actionToolbar.frame;
@@ -63,7 +65,8 @@
             NSMutableArray *items = [[NSMutableArray alloc] init];
             
             //  Create a cancel button to show on keyboard to resign it. Adding a selector to resign it.
-            UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(pickerCancelClicked:)];
+        
+            UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(pickerCancelClicked:)];
             [items addObject:cancelButton];
             
             _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _actionToolbar.frame.size.width-66-57.0-16, 44)];
@@ -82,7 +85,7 @@
             [items addObject:nilButton];
             
             //  Create a done button to show on keyboard to resign it. Adding a selector to resign it.
-            UIBarButtonItem *doneButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(pickerDoneClicked:)];
+            UIBarButtonItem *doneButton =[[UIBarButtonItem alloc] initWithTitle:@"确认" style:UIBarButtonItemStylePlain target:self action:@selector(pickerDoneClicked:)];
             [items addObject:doneButton];
             
             //  Adding button to toolBar.
@@ -112,7 +115,7 @@
         
         //Initial settings
         {
-            self.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+            self.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
             [self setFrame:CGRectMake(0, 0, CGRectGetWidth(_pickerView.frame), CGRectGetMaxY(_pickerView.frame))];
             [self setActionSheetPickerStyle:IQActionSheetPickerStyleTextPicker];
             
